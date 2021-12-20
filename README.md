@@ -66,7 +66,6 @@ Morse validation regex is used to test if a string js a valid morse message.
 ```js
 const morseLetters = morser.notation.letters;
 const regex = morser.notation.validationRegex;
-            = /^([.-]+( \/ | )?)+$/
 ```
 
 ## To Do

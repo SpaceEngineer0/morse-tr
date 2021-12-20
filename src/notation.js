@@ -64,6 +64,6 @@ export default {
 	numbers,
 	symbols,
 	allCharacters: [...letters, ...numbers, ... symbols],
-	validationRegex: /^([.-]+( \/ | )?)+$/,
+	validationRegex: /^(([.-]+|#)( \/ | )?)+$/,
 	unknownChar: '#'
 }
