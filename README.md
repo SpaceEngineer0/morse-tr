@@ -1,4 +1,4 @@
-# morser
+# morse-tr
 
 Fast morse code translation module.
 

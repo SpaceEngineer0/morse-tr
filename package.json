@@ -1,5 +1,5 @@
 {
-  "name": "morser",
+  "name": "morse-tr",
   "version": "1.0.0",
   "description": "Fast morse code translation module.",
   "main": "index.js",
