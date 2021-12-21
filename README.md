@@ -2,10 +2,10 @@
 
 Fast morse code translation module.
 
-To install the package, type `npm i morser` in a terminal and add this to your project:
+To install the package, type `npm i morse-tr` in a terminal and add this to your project:
 
 ```js
-const morser = require('morser');
+const morser = require('morse-tr');
 ```
 
 ## Morse Code formatting
