@@ -6,5 +6,5 @@ export default {
 	notation,
 	toMorse,
 	toText,
-	isValidMorse: input => notation.validationRegex.test(input),
+	isValidMorse: input => notation.validationRegex.test(input)
 }

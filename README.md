@@ -20,14 +20,14 @@ const morser = require('morser');
 
 ## toMorse
 
-Translates a string to morse code. If a letter is used in the string that isn't present in the notation a hash `#` will be inserted in its place. If the string is not matched by notation's validation regex the function will return `null`.
+Translates a string to morse code. If a letter is used in the string that isn't present in the notation a hash `#` will be inserted in its place.
 
 ```js
-const text = 'hello';
-morser.toMorse(textStr);        // '.... . .-.. .-.. ---'
+const hello = 'hello';
+morser.toMorse(hello);        // '.... . .-.. .-.. ---'
 
-const hashTxt = 'ab ąć cd';
-morser.toMorse(hashTxt);        // '.- -... / # # / -.-. -..'
+const hash = 'ab ąć cd';
+morser.toMorse(hash);        // '.- -... / # # / -.-. -..'
 
 const invalid = '.- -.. <>?';
 morser.toMorse(invalid);        // null
@@ -35,14 +35,14 @@ morser.toMorse(invalid);        // null
 
 ## toText
 
-Translates a string of morse code to normal text. If a morse letter is used in the string that isn't present in the notation a hash `#` will be inserted in its place.
+Translates a string of morse code to normal text. If a morse letter is used in the string that isn't present in the notation a hash `#` will be inserted in its place. If the string is not matched by notation's validation regex the function will return `null`, making this function failsafe.
 
 ```js
 const hello = '.... . .-.. .-.. ---';
 morser.toText(hello);        // 'hello'
 
-const hashMor = '.- -... / .--...-. --..-.- / ..-..--. -.-.';
-morse.toText(hashMor);        // 'ab ## cd'
+const hash = '.- -... / .--...-. --..-.- / ..-..--. -.-.';
+morse.toText(hash);        // 'ab ## cd'
 ```
 
 ## isValidMorse
@@ -65,12 +65,12 @@ Morse validation regex is used to test if a string js a valid morse message.
 
 ```js
 const morseLetters = morser.notation.letters;
+const allMorseCharacters = morser.notation.allCharacters;
 const regex = morser.notation.validationRegex;
 ```
 
 ## To Do
 
-* custom characters
 * QCodes
 
 ## Contribute
