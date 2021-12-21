@@ -35,7 +35,7 @@ morser.toMorse(invalid);        // null
 
 ## toText
 
-Translates a string of morse code to normal text. If a morse letter is used in the string that isn't present in the notation a hash `#` will be inserted in its place. If the string is not matched by notation's validation regex the function will return `null`, making this function failsafe.
+Translates a string of morse code to normal text. If a morse letter is used in the string that isn't present in the notation a hash `#` will be inserted in its place. If the string is not matched by notation's validation regex the function will return `null`as a failsafe.
 
 ```js
 const hello = '.... . .-.. .-.. ---';
