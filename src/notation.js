@@ -59,7 +59,7 @@ const symbols = [
 	{ text: '@', morse: '.--.-.' }
 ]
 
-export default {
+module.exports = {
 	letters,
 	numbers,
 	symbols,

@@ -1,6 +1,6 @@
-import notation from './notation.js';
+const notation = require('./notation');
 
-export default (input) => {
+module.exports = (input) => {
 	var output = [];
 
 	input.split(' ').forEach(clump => {

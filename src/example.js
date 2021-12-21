@@ -1,4 +1,4 @@
-import morser from '../index.js';
+const morsetr = require('../index');
 
 const str1 = 'abc';
 const str2 = 'ab cd ef';
@@ -14,17 +14,17 @@ const a = '-.. . .-..';
 const b = '-.. . <>?;';
 
 console.log(`
-hello world in morse: ${morser.toMorse('hello world')}
+hello world in morse: ${morsetr.toMorse('hello world')}
 
-${str1}: ${morser.toMorse(str1)}
-${str2}: ${morser.toMorse(str2)}
+${str1}: ${morsetr.toMorse(str1)}
+${str2}: ${morsetr.toMorse(str2)}
 
-${hello}: ${morser.toMorse(hello)}
-${helloMor}: ${morser.toText(helloMor)}
+${hello}: ${morsetr.toMorse(hello)}
+${helloMor}: ${morsetr.toText(helloMor)}
 
-${hashTxt}: ${morser.toMorse(hashTxt)}(# are invalid letters)
-${hashMor}: ${morser.toText(hashMor)} (# are invalid letters)
+${hashTxt}: ${morsetr.toMorse(hashTxt)}(# are invalid letters)
+${hashMor}: ${morsetr.toText(hashMor)} (# are invalid letters)
 
-${invalid}: ${morser.toText(invalid)} (invalid morse code returns null)
-${a} is valid morse? ${morser.isValidMorse(a)}
-${b} is valid morse? ${morser.isValidMorse(b)}`);
+${invalid}: ${morsetr.toText(invalid)} (invalid morse code returns null)
+${a} is valid morse? ${morsetr.isValidMorse(a)}
+${b} is valid morse? ${morsetr.isValidMorse(b)}`);

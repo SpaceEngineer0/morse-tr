@@ -1,8 +1,8 @@
-import notation from './src/notation.js';
-import toMorse from './src/to-morse.js';
-import toText from './src/to-text.js';
+const notation = require('./src/notation');
+const toMorse = require('./src/to-morse');
+const toText = require('./src/to-text');
 
-export default {
+module.exports = {
 	notation,
 	toMorse,
 	toText,
