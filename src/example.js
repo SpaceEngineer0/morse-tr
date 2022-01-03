@@ -1,4 +1,4 @@
-const morsetr = require('../index');
+const morseTr = require('./index');
 
 const str1 = 'abc';
 const str2 = 'ab cd ef';
@@ -6,27 +6,27 @@ const str2 = 'ab cd ef';
 const hello = 'hello';
 const world = '.-- --- .-. .-.. -..';
 
-const hashTxt = 'ab ąć cd';
-const hashMor = '.- -... / .--...-. --..-.- / ..-..--. -.-.';
+const hashTxt = 'aą bć';
+const unkChars = '.- .-.-...- / -... --.-.-..-';
 const textWithHash = '.--. --- .-.. --- -. . --.. #'
 
 const invalid = '.- -.. <>?';
 const a = '-.. . .-..';
-const b = '-.. . <>?;';
+const b = '-.. . <>?';
 
 console.log(`
-hello world in morse: ${morsetr.toMorse('hello world')}
+hello world in morse: ${morseTr.toMorse('hello world')}
 
-${str1}: ${morsetr.toMorse(str1)}
-${str2}: ${morsetr.toMorse(str2)}
+${str1}: ${morseTr.toMorse(str1)}
+${str2}: ${morseTr.toMorse(str2)}
 
-${hello}: ${morsetr.toMorse(hello)}
-${world}: ${morsetr.toText(world)}
+${hello}: ${morseTr.toMorse(hello)}
+${world} : ${morseTr.toText(world)}
 
-${hashTxt}: ${morsetr.toMorse(hashTxt)} (# are invalid letters)
-${hashMor}: ${morsetr.toText(hashMor)} (# are invalid letters)
-${textWithHash}: ${morsetr.toText(textWithHash)} (strings with invalid letters will be translated)
+${hashTxt}: ${morseTr.toMorse(hashTxt)} (# are invalid letters)
+${unkChars}: ${morseTr.toText(unkChars)} (# are invalid letters)
+${textWithHash}: ${morseTr.toText(textWithHash)} (strings with unknown letters will be translated)
 
-${invalid}: ${morsetr.toText(invalid)} (invalid morse code returns null)
-${a} is valid morse? ${morsetr.isValidMorse(a)}
-${b} is valid morse? ${morsetr.isValidMorse(b)}`);
+${invalid}: ${morseTr.toText(invalid)} (invalid morse code returns null)
+${a} is valid morse? ${morseTr.isValidMorse(a)}
+${b} is valid morse? ${morseTr.isValidMorse(b)}`);

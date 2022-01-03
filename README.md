@@ -5,7 +5,7 @@ Fast morse code translation module.
 To install the package, type `npm i morse-tr` in a terminal and add this to your project:
 
 ```js
-const morsetr = require('morse-tr');
+const morseTr = require('morse-tr');
 ```
 
 ## Morse Code formatting
@@ -14,9 +14,9 @@ const morsetr = require('morse-tr');
 * Letters of a word are separated by a single space
 * Word are separated by a slash between spaces
 
-'hello world' in morse: `.... . .-.. .-.. --- / .-- --- .-. .-.. -..`
+`hello world` in morse: `.... . .-.. .-.. --- / .-- --- .-. .-.. -..`
 
-![morse-code.png](./morse-code.png)
+![morse code chart](./morse-code.png)
 
 ## toMorse
 
@@ -24,13 +24,13 @@ Translates a string to morse code. If a letter is used in the string that isn't 
 
 ```js
 const hello = 'hello';
-morsetr.toMorse(hello);        // '.... . .-.. .-.. ---'
+morseTr.toMorse(hello);        // '.... . .-.. .-.. ---'
 
-const hash = 'ab ąć cd';
-morsetr.toMorse(hash);        // '.- -... / # # / -.-. -..'
+const hash = 'aą bć';
+morseTr.toMorse(hash);        // '.- # / -... #'
 
 const invalid = '.- -.. <>?';
-morsetr.toMorse(invalid);        // null
+morseTr.toMorse(invalid);        // null
 ```
 
 ## toText
@@ -39,39 +39,43 @@ Translates a string of morse code to normal text. If a morse letter is used in t
 
 ```js
 const hello = '.... . .-.. .-.. ---';
-morsetr.toText(hello);        // 'hello'
+morseTr.toText(hello);        // 'hello'
 
-const hash = '.- -... / .--...-. --..-.- / ..-..--. -.-.';
-morse.toText(hash);        // 'ab ## cd'
+const unkChars = '.- .-.-...- / -... --.-.-..-';
+morse.toText(hash);        // 'a# b#'
 ```
 
 ## isValidMorse
 
-Checks if a string is valid morse code. Returns `true` of `false`.
+Checks if a string is valid morse code.
 
 ```js
 const a = '-.. . .-..';
-const b = '-.. . <>?;';
+const b = '-.. . <>?';
 
-morsetr.isValidMorse(a);        // true
-morsetr.isValidMorse(b);        // false
+morseTr.isValidMorse(a);        // true
+morseTr.isValidMorse(b);        // false
 ```
 
 ## notation
 
-Notation of morse code letters, numbers and symbols.
-
-Morse validation regex is used to test if a string js a valid morse message.
+Notation properties:
 
 ```js
-const morseLetters = morsetr.notation.letters;
-const allMorseCharacters = morsetr.notation.allCharacters;
-const regex = morsetr.notation.validationRegex;
+morseTr.notation
+  .letters
+  .numbers
+  .symbols
+  .allCharacters
+  .validationRegex
+  .unknownChar
 ```
 
-## To Do
+Each character is an object with `text` and `morse` properties.
 
-* QCodes
+```js
+morseTr.notation.letters[0];        // { text: 'a', morse: '.-' }
+```
 
 ## Contribute
 
