@@ -2,7 +2,7 @@
 
 Fast morse code translation module.
 
-To install the package, type `npm i morse-tr` in a terminal and add this to your project:
+To install the package, type `npm i morse-tr` in a terminal.
 
 ```js
 const morseTr = require('morse-tr');
@@ -12,9 +12,7 @@ const morseTr = require('morse-tr');
 
 * Parts of a letter aren't separated
 * Letters of a word are separated by a single space
-* Word are separated by a slash between spaces
-
-`hello world` in morse: `.... . .-.. .-.. --- / .-- --- .-. .-.. -..`
+* Word are separated by a slash
 
 ![morse code chart](./morse-code.png)
 

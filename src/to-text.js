@@ -1,3 +1,5 @@
+"use strict";
+
 const notation = require('./notation');
 
 module.exports = (input) => {

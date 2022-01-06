@@ -8,7 +8,7 @@ const world = '.-- --- .-. .-.. -..';
 
 const hashTxt = 'aą bć';
 const unkChars = '.- .-.-...- / -... --.-.-..-';
-const textWithHash = '.--. --- .-.. --- -. . --.. #'
+const textWithHash = '.--. --- .-.. --- -. . --.. #';
 
 const invalid = '.- -.. <>?';
 const a = '-.. . .-..';
@@ -29,4 +29,5 @@ ${textWithHash}: ${morseTr.toText(textWithHash)} (strings with unknown letters w
 
 ${invalid}: ${morseTr.toText(invalid)} (invalid morse code returns null)
 ${a} is valid morse? ${morseTr.isValidMorse(a)}
-${b} is valid morse? ${morseTr.isValidMorse(b)}`);
+${b} is valid morse? ${morseTr.isValidMorse(b)}`
+)

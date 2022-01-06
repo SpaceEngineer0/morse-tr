@@ -1,3 +1,5 @@
+"use strict";
+
 const notation = require('./notation');
 const toMorse = require('./to-morse');
 const toText = require('./to-text');
