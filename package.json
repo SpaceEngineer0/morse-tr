@@ -1,11 +1,9 @@
 {
   "name": "morse-tr",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "Fast and simple morse code translation module.",
   "main": "./src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {  },
   "author": "SpaceEngie",
   "repository": {
     "type": "git",

@@ -1,5 +1,3 @@
-"use strict";
-
 const letters = [
 	{ text: 'a', morse: '.-'   },
 	{ text: 'b', morse: '-...' },
@@ -65,7 +63,7 @@ module.exports = {
 	letters,
 	numbers,
 	symbols,
-	allCharacters: [...letters, ...numbers, ... symbols],
-	validationRegex: /^(([.-]+|#)( \/ | )?)+$/,
+	characters: [...letters, ...numbers, ... symbols],
+	regex: /^(([.-]+|#)( \/ | )?)+$/,
 	unknownChar: '#'
 }

@@ -2,7 +2,7 @@
 
 Fast morse code translation module.
 
-To install the package, type `npm i morse-tr` in a terminal.
+`npm i morse-tr`
 
 ```js
 const morseTr = require('morse-tr');
@@ -10,71 +10,62 @@ const morseTr = require('morse-tr');
 
 ## Morse Code formatting
 
-* Parts of a letter aren't separated
-* Letters of a word are separated by a single space
-* Word are separated by a slash
+* Parts of a letter aren't separated.
+* Letters of a word are separated by a single space.
+* Word are separated by a slash.
 
-![morse code chart](./morse-code.png)
+## Documentation
 
-## toMorse
+### encrypt(text)
 
-Translates a string to morse code. If a letter is used in the string that isn't present in the notation a hash `#` will be inserted in its place.
+* `text` - string, message to encrypt.
 
-```js
-const hello = 'hello';
-morseTr.toMorse(hello);        // '.... . .-.. .-.. ---'
-
-const hash = 'aą bć';
-morseTr.toMorse(hash);        // '.- # / -... #'
-
-const invalid = '.- -.. <>?';
-morseTr.toMorse(invalid);        // null
-```
-
-## toText
-
-Translates a string of morse code to normal text. If a morse letter is used in the string that isn't present in the notation a hash `#` will be inserted in its place. If the string is not matched by notation's validation regex the function will return `null`as a failsafe.
+If a letter is used in the string that isn't present in the notation a hash `#` will be inserted in its place.
 
 ```js
-const hello = '.... . .-.. .-.. ---';
-morseTr.toText(hello);        // 'hello'
-
-const unkChars = '.- .-.-...- / -... --.-.-..-';
-morse.toText(hash);        // 'a# b#'
+morseTr.encrypt('hello');         // '.... . .-.. .-.. ---'
+morseTr.encrypt('aą bć');         // '.- # / -... #'
+morseTr.encrypt('.- -.. <>?');    // null
 ```
 
-## isValidMorse
+### decrypt(text)
+
+* `text` - string, morse code to decrypt.
+
+If a morse letter is used in the string that isn't present in the notation a `#` will be inserted in its place.
+
+If the input is not matched by the validation regex function returns `null`.
+
+```js
+morseTr.decrypt('.... . .-.. .-.. ---');          // 'hello'
+morse.decrypt('.- .-.-...- / -... --.-.-..-');    // 'a# b#'
+```
+
+### isValidMorse(text)
+
+* `text` - string, morse code to check.
 
 Checks if a string is valid morse code.
 
 ```js
-const a = '-.. . .-..';
-const b = '-.. . <>?';
-
-morseTr.isValidMorse(a);        // true
-morseTr.isValidMorse(b);        // false
+morseTr.isValidMorse('-.. . .-..');    // true
+morseTr.isValidMorse('-.. . <>?');     // false
 ```
 
-## notation
+### Notation
 
 Notation properties:
 
-```js
-morseTr.notation
-  .letters
-  .numbers
-  .symbols
-  .allCharacters
-  .validationRegex
-  .unknownChar
-```
+* `.letters`
+* `.numbers`
+* `.symbols`
+* `.characters`
+* `.regex`
+* `.unknownChar`
 
 Each character is an object with `text` and `morse` properties.
 
 ```js
-morseTr.notation.letters[0];        // { text: 'a', morse: '.-' }
+morseTr.notation.letters[0];
+// { text: 'a', morse: '.-' }
 ```
-
-## Contribute
-
-If you spot a bug, or want to improve this module, please contact me.
